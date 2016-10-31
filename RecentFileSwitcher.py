@@ -81,3 +81,6 @@ class ViewEventListener(sublime_plugin.EventListener):
   def on_deactivated_async(self, view):
     if view.is_dirty() and view.file_name():
       view.run_command('save')
+
+  def on_post_save(self, view):
+    view.settings().set(CONSTANT.file_info, None)
