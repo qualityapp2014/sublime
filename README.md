@@ -1,17 +1,24 @@
-# sublime plugins repo
+# Installation
 
-This is the repo to provide plugins for sublime. Copy the plugins .py file into sublime package folder. For example, this is one example plugin path for Sublime 3 on Mac OSX.
+First copy the plugins .py file to Sublime package folder like `\~/Library/Application Support/Sublime Text 3/Packages/User/RecentFileSwitcher.py` on Mac OS.
 
-~/Library/Application Support/Sublime Text 3/Packages/User/RecentFileSwitcher.py
+Then open [Preferences] => [Key Bindings] to set short-cut keys to launch the plugin. The example below launches the recent file switcher by cmd+e.
 
-To configure key bindings to launch the plugin via short-cut, follow menu [Preferences] => [Key Bindings].
-
+```
 [
   { "keys": ["super+e"], "command": "recent_file_switcher" },
 ]
+```
 
-Or to verify the plugin, invoke directly in Sublime Python console. [View] => [Show Console].
+To debug, manually launch the plugin in Sublime Python console. [View] => [Show Console].
 
+```
 window.run_command("recent_file_switcher")
+```
 
-# good luck and enjoy
+# RecentFileSwitcher
+
+This plugin creates a recent tab view and sort by the last updated timestamp. It allows fast jumps between multiple tabs like in IntelliJ.
+
+- Show recent tabs in selection view
+- Auto-save (undeleted file) after the lost of focus
